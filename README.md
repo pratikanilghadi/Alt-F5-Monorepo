@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains the backend code for our application, implemented using FastAPI.
+This repository contains the backend code for our application, which was implemented using FastAPI.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ Navigate to the root directory of the backend repository and run the following c
 ```sh
 uv venv
 source .venv/bin/activate
-uv pip install .
+uv pip install
 uv add fastapi
 ```
 
@@ -39,10 +39,10 @@ fastapi dev
 ```
 
 The application will be accessible at `http://127.0.0.1:8000`.
-To view the documentation of the API visist : `http://127.0.0.1:8000/docs` , ensure the API server is running.
+To view the documentation of the API, visit `http://127.0.0.1:8000/docs` and ensure the API server is running.
 
 ## Additional Information
 
 ### Test Implementation
 
-There is a `test.ipynb` file in this repository that contains some implementation logic which has not yet been integrated into the API. You can review and run the notebook to understand and test the logic.
+There is a `DocEmbedding.ipynb` file in this repository that contains some implementation logic that has not yet been integrated into the API. You can review and run the notebook to understand and test the logic.
