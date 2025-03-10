@@ -1,5 +1,14 @@
 # InsightsAI Semantic Document Search Tool
 
+
+## ⚠️ Important Note
+
+**WARNING**: The actual code for this project is maintained on two separate branches:
+1. Branch: `frontend` - Contains the React/Next.js UI implementation, components, and client-side logic
+2. Branch: `backend` - Contains the Python FastAPI server, document processing logic, and database integration
+
+Please make sure to check out the appropriate branch based on the component you're interested in.
+
 **[Try the Live Demo](https://insights-ai-nhe1.vercel.app/insight)**
 
 ## Overview
@@ -22,6 +31,7 @@ This repository is organized as a monorepo with separate branches for frontend a
 - **Main Branch**: Project overview and documentation
 - **Frontend Branch**: React/Next.js implementation with TypeScript and Tailwind CSS
 - **Backend Branch**: API implementation and document processing logic
+
 
 ## Getting Started
 
