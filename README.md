@@ -12,6 +12,8 @@ Ensure you have the following installed on your machine:
 
 ## Setup Instructions
 
+Go to the Backend Directory before proceeding
+
 ### Step 1: Install `uv`
 
 Install the `uv` package manager using the command below:
