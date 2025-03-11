@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, HTTPException
 from model import EmbeddingData, SearchQuery
+from dependencies.embeddings import embed
 
 import os
 
@@ -20,11 +21,13 @@ def document_processor(user_id:str, file:UploadFile) -> dict[str,str]:
     file_extension = file_extension.lower()
     
     # Validate the file extension
-    if file_extension not in ['.pdf', '.docx']:
+    if file_extension not in ['.pdf']:
         raise HTTPException(
             status_code=400, 
-            detail=f"Unsupported file type: {file_extension}. Only PDF and DOCX files are supported."
+            detail=f"Unsupported file type: {file_extension}. Only PDF files are supported."
         )
+    
+    
     
     return {"message": f"Successfully validated {file.filename}", "file_type": file_extension[1:]}
 

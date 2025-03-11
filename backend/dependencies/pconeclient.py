@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+
 api_key=os.getenv("PINECONE")
 
 def get_pine_client():
