@@ -8,3 +8,6 @@ class EmbeddingData(BaseModel):
 class SearchQuery(BaseModel):
     uuid: UUID = Field(..., description="The uniquely generated id of the user")
     query_str: str = Field(..., description="The query string which is to be provided to search through the embeddings")
+
+class User(BaseModel):
+    ...
