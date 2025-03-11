@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "dotenv>=0.9.9",
     "fastapi[standard]>=0.115.11",
     "motor>=3.7.0",
     "pymongo[srv]>=4.11.2",

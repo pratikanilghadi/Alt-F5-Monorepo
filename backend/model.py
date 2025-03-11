@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from uuid import UUID
+
 
 class EmbeddingData(BaseModel):
     uuid: UUID = Field(..., description="The uniquely generated id of the user")
