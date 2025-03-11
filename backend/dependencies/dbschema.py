@@ -51,4 +51,4 @@ class ChunkSchema(BaseModel):
 
     class Config:
         json_encoders = {ObjectId: str}
-        arbitrary_types_allowed = True
+        arbitrary_type_allowed = True
