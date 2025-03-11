@@ -1,9 +1,9 @@
 from fastapi import FastAPI, UploadFile, HTTPException
 from model import EmbeddingData, SearchQuery
 from dependencies.embeddings import embed
+from dependencies.embeddings import pinesearch
 
 import os
-
 
 app = FastAPI()
 
@@ -27,10 +27,17 @@ def document_processor(user_id:str, file:UploadFile) -> dict[str,str]:
             detail=f"Unsupported file type: {file_extension}. Only PDF files are supported."
         )
     
-    
-    
-    return {"message": f"Successfully validated {file.filename}", "file_type": file_extension[1:]}
+    file_content = file.file.read()
+
+    if embed(user_id=user_id, file_content=file_content):
+        return {"message":"file has been successfully embedded"}
+    else:
+        return {"message":"file has not been processed due to server issue"}
 
 @app.post("/search_query")
-def query_search(params: SearchQuery) -> dict[str,str]:
-    return {"message":"route is functional"}
+def query_search(user_id:str, query:str) -> dict[str,str]:
+    document_ids, chunk_ids = pinesearch(user_id=user_id, query=query)
+    return {
+        "document_ids":document_ids,
+        "chunk_ids":chunk_ids
+    }
